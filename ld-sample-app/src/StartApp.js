@@ -23,7 +23,7 @@ let ldContext = {
 
 function StartApp(props) {
 
-  console.log("___________________ inside StartApp.js");
+  console.log("___________________ inside StartApp.js with env={} and clinetSideId:{}",process.env.NODE_ENV, process.env.REACT_APP_LAUNCHDARKLY_CLIENT_ID);
   //console.log("userId:",props.userId);
   //console.log("userEmail:",props.userEmail);
   //console.log("tenantId:",props.tenantId);
@@ -83,7 +83,7 @@ function StartApp(props) {
  *  key: The key property should uniquely identify each context. You can use a primary key, an email address, or a hash, as long as the same context always has the same key. We recommend using a hash if possible.
  */
 export default withLDProvider({
-  clientSideID: '63ac9dcd4f2a0710f209e5ae',
+  clientSideID: process.env.REACT_APP_LAUNCHDARKLY_CLIENT_ID,
   //context: ldContext,
   options: {
     bootstrap: "localStorage",
